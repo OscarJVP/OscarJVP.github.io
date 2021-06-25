@@ -1,41 +1,239 @@
 <!DOCTYPE html>
-<html lang = "es">
-
+<html lang="es">
 <head>
-	<meta charset = "UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>FacilEs</title>
-    <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='styles/styles.css') }}">
+    <title>FácliEs</title>
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='styles/estilos.css') }}">
 </head>
 
 <body>
-    <header>HEADER</header>
+    <header>
 
-    <nav>NAV</nav>
+        <!-- Logo -->
+        <div class="logo">
+            <img src="{{ url_for('static',filename='images/logoSinFondo.PNG') }}" alt="logo">
+            <!-- Boton de registarse e iniciar sesión -->
+            <a href="/registro">Registrarse</a>  <!-- cambiare referencia -->
+            <a href="/iniciarS">Iniciar Sesión</a>  <!-- cambiare referencia -->
+        </div>
+        
+        <!-- Menu desplegable -->
+        <nav id="menu">
+            <ul>
+                <li>
+                    <a href="#">Temporadas<span class="arrow">&#x25BC;</span></a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#">Navidad<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/piernaA">Pierna ahumada de cerdo</a>  <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
 
-    <main>
-        <h1>Tus recetas favoritas</h1>
-        <h2>Agregar Recetas a Favoritos</h2>
+                        <li>
+                            <a href="#">Fiestas Patrias<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/tacosC">Tacos de carnitas estilo Michoacán</a>  <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
 
-        <form action = "/guardar_receta", method = "POST">
-            Título: <input type="text" name="titulo">
-            <input type="submit" value="Agregar a favoritos">
-        </form>
-        <a href="/">Página principal</a>
-    </main>
+                        <li>
+                            <a href="#">Año Nuevo<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/pechugaP">Pechuga de pavo en salsa ligera de naranja y arándanos</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
 
-	<aside>
-		<header>
-			<h1> Recetas Random </h1>
-		</header>
-        <div id="video_1"></div>
-        <div id="video_2"></div>
-        <div id="video_3"></div>
-	</aside>
+                <li>
+                    <a href="#">Postres<span class="arrow">&#x25BC;</span></a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#">Sencillos<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/smoothieF">Smoothie de fresas y cerezas</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
 
-    <footer>FOOTER</footer>
+                        <li>
+                            <a href="#">Pasteles<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/tartaH">Tarta helada de fresas</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Bajo en Azúcar<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/galletasA">Galletas de almendras</a>   <!-- Cambiar el enlace y revisar el nombre-->
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Sencillas<span class="arrow">&#x25BC;</span></a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#">Media hora<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/tostadaA">Tostada de bonito en aceite con mermelada de tomate y piñones</a>   <!-- Cambiar el enlace-->
+                                </li>
+
+                                <li>
+                                    <a href="/jacobosJ">San Jacobos de jamón y queso</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Sin horno<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/arrozL">Arroz con leche</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Niños<span class="arrow">&#x25BC;</span></a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#">Lunch<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/burritosP">Burritos de pechuga de pollo</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Divertidos<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/pizzaR">Pizza a la romana</a>   <!-- Cambiar el enlace-->
+                                </li>
+
+                                <li>
+                                    <a href="/berenjenasR">Berenjenas rellenas de carne</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Carnes<span class="arrow">&#x25BC;</span></a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#">Pollo<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/polloR">Pollo de leche rostizado</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Puerco y res<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/tostadaM">Tostada mallorquina</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Pescados y mariscos<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/galloE">Gallo empanado con salsa de limón</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="principal">
+        <!-- Contenido Principal -->
+        <main>
+            <h2>Agregar Recetas a Favoritos</h2>
+
+            <form action = "/guardar_receta", method = "POST">
+                Título: <input type="text" name="titulo">
+                <input type="submit" value="Agregar a favoritos">
+            </form>
+        </main>
+        <!-- Aside -->
+        <aside class="videos">
+            <div id="video_1"></div>
+            <div id="video_2"></div>
+            <div id="video_3"></div>
+        </aside>
+    </div>
+    
+
+    <!-- Barra Lateral -->
+    <div class="barra-lateral">
+        <ul>
+            <li>
+                <a href="/">Inicio</a>  <!-- cambiar la referencia a donde va a ser dirijido-->
+            </li>
+
+            <li>
+                <a href="/">Mis Favoritas/Mis Datos</a>  <!-- cambiar la referencia a donde va a ser dirijido-->
+            </li>
+        </ul>
+    </div>
+    
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="contenedor">
+            <h2 class="titulo">Contáctanos</h2>
+        </div>
+
+        <div class="redes-sociales">
+            <a href="https://www.facebook.com/F%C3%A1cil-Es-103641258642178"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/_faciles/"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <div class="datos-personales">
+            <h2 class="titulo">Equipo 1</h2>
+            <li>Espinosa Ponce Beatriz Deite</li>
+            <li>Martínez Barrón Rebeca Paulina</li>
+            <li>Ruíz Zamora Edgar Sebastián</li>
+            <li>Vargas Flores Eduardo</li>
+            <li>Vargas Palacios Oscar Jair</li>
+        </div>
+    </footer>
+
+    
+
+
+    <script src="https://kit.fontawesome.com/bdbed0aafa.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{{url_for('static', filename='js/codigo_aside_videos.js') }}"></script>
 </body>
-
 </html>

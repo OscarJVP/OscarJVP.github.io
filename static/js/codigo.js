@@ -92,3 +92,5 @@ function fiestasPatrias(){
 		son.pause();
 	}
 }
+
+// Para revisar inicio de sesión

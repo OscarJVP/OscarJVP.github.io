@@ -15,6 +15,10 @@ def index():
 def registro():
     return render_template("registro.html");
 
+@app.route("/iniciarS")
+def iniciarS():
+    return render_template("iniciarS.html");
+
 @app.route("/favoritos")
 def favoritos():
     return render_template("favoritos.html");
@@ -53,6 +57,61 @@ def registrar():
             return render_template("respuesta.html", mensaje = mensaje);
             conexion.close()
 
+@app.route("/actualizar", methods = ["POST","GET"])
+def actualizar():
+    mensaje = "mensaje base"
+    if request.method == "POST":
+        try:
+            nombre = request.form["nombre"]
+            apellido_p = request.form["apellido_p"]
+            apellido_m = request.form["apellido_m"]
+            alias = request.form["alias"]
+            password = request.form["password"]
+            
+            conexion = sqlite3.connect("data.db")
+            cursor = conexion.cursor()
+            cursor.execute("UPDATE usuarios SET nombre=?, apellido_p=?, apellido_m=?, alias=?, password=? WHERE alias=?;", (nombre,apellido_p,apellido_m,alias,password,alias))
+            conexion.commit()
+            mensaje = "Cambios registrados"
+            
+        except Error as e:
+            print(f"Error message: {e}")
+            conexion.rollback()
+            mensaje = "No se hizo el cambio"
+            
+        finally:
+            return render_template("respuesta.html", mensaje = mensaje);
+            conexion.close()
+
+@app.route("/usuario", methods = ["POST","GET"])
+def usuario():
+    mensaje = "mensaje base"
+    display = "display base"
+    row = []
+    if request.method == "POST":
+        try:
+            alias_ingreso = request.form["alias_ingreso"]
+            password_ingreso = request.form["password_ingreso"]
+            conexion = sqlite3.connect("data.db")
+            conexion.row_factory = sqlite3.Row
+            cursor = conexion.cursor()
+            cursor.execute("SELECT * FROM usuarios WHERE alias=?", ([alias_ingreso]))
+            row = cursor.fetchone()
+            if row[-1] == password_ingreso:
+                display = "usuario_lista.html"
+            else:
+                display = "respuesta.html"
+                mensaje = "Contraseña incorrecta"
+                
+        except Error as e:
+            print(f"Error message: {e}")
+            conexion.rollback()
+            mensaje = "No se encontró usuario"    
+        finally:
+            return render_template(display, mensaje = mensaje, fila = row);
+            conexion.close()
+    
+
 @app.route("/guardar_receta", methods = ["POST","GET"])
 def guardar_receta():
     mensaje = "mensaje base"
@@ -79,7 +138,7 @@ def listar_favoritos():
     conexion = sqlite3.connect("data.db")
     conexion.row_factory = sqlite3.Row
     cursor = conexion.cursor()
-    cursor.execute("select * from recetas")
+    cursor.execute("SELECT * FROM recetas")
     rows = cursor.fetchall()
     return render_template("favoritos_lista.html", filas = rows);
 

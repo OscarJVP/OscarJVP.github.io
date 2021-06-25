@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Las 10 recetas más vistas en el mes</title>
-    <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='styles/recetas.css') }}">
+    <title>FácliEs</title>
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='styles/estilos.css') }}">
 </head>
 
 <body>
@@ -13,7 +13,7 @@
 
         <!-- Logo -->
         <div class="logo">
-            <img src="{{ url_for('static',filename='images/logoSinFondo.png') }}" alt="logo">
+            <img src="{{ url_for('static',filename='images/logoSinFondo.PNG') }}" alt="logo">
             <!-- Boton de registarse e iniciar sesión -->
             <a href="/registro">Registrarse</a>  <!-- cambiare referencia -->
             <a href="/iniciarS">Iniciar Sesión</a>  <!-- cambiare referencia -->
@@ -174,35 +174,22 @@
             </ul>
         </nav>
     </header>
-    
+
     <div class="principal">
         <!-- Contenido Principal -->
         <main>
-            <h1>Las 10 recetas más vistas en el mes</h1>
-            <p class = "fechaArticulo">Mes de junio</p>
-            <section class = "infoArticulo">
-                <p>Llegó el día de publicación mensual, y estas son las recetas favoritas, las más cocinadas y leídas, invadido de recetas con diversos ingredientes, con el verano más presente que nunca en nuestras mesas.</p>
-                <p>La calidad de los ingredientes es muy importante para obtener buenos resultados. En la actualidad hay una oferta amplia de productos de variados precios, si tu presupuesto está ajustado, céntrate en ingredientes de menor precio pero altísima calidad, los de temporada tienen siempre un coste más apañado. Mencionó a menudo los burritos de pollo como un claro ejemplo de economía, son muy baratos, riquísimos, tienen mil utilidades en cocina y  son saludables.</p>
-                <p>Haz una lista de lo que vas a necesitar el siguiente mes antes de ir de compras e intenta no apartarte de ella, si planificas, en tu casa comerán mejor y a menor precio. No está la vida para tirar comida, ajusta tu lista y no te apartes de ella.</p>
-            </section>
-        
-            <section class = "articulo">
-                <nav>
-                        <p><a href="/piernaA">Pierna ahumada de cerdo</a></p>
-                        <p><a href="/tacosC">Tacos de carnitas estilo Michoacán</a></p>
-                        <p><a href="/pechugaP">Pechuga de pavo en salsa ligera de naranja y arándanos</a></p>
-                        <p><a href="/smoothieF">Smoothie de fresas y cerezas</a></p>
-                        <p><a href="/tartaH">Tarta helada de fresas</a></p>
-                        <p><a href="/galletasA">Galletas de almendras</a></p>
-                        <p><a href="/tostadaA">Tostada de bonito en aceite con mermelada de tomate y champiñones</a></p>
-                        <p><a href="/jacobosJ">San jacobos de jacóm y queso</a></p>
-                        <p><a href="/arrozL">Arroz con leche</a></p>
-                        <p><a href="/burritosP">Burritos de pechuga de pollo</a></p>
-                    </nav>
-            </section>
-
+            <h2>Datos del Usuario</h2> <br>
+            <h2>Aquí puedes ver y modificar tus datos</h2>
+            <h2>Si no deseas hacer algún cambio puedes volver a la página principal</h2> <br>
+            <form action = "/actualizar", method = "POST">
+                Nombre: <input type="text" name="nombre" value={{ fila["nombre"] }}> <br><br>
+                Apellido paterno: <input type="text" name="apellido_p" value={{ fila["apellido_p"] }}> <br><br>
+                Apellido materno: <input type="text" name="apellido_m" value={{ fila["apellido_m"] }}> <br><br>
+                Alias: <input type="text" name="alias" value={{ fila["alias"] }}> <br><br>
+                Contraseña: <input type="text" name="password" minlength="8" value={{ fila["password"] }}> <br><br>
+                <input type="submit" value="Actualizar datos">
+            </form>
         </main>
-
         <!-- Aside -->
         <aside class="videos">
             <div id="video_1"></div>
@@ -253,6 +240,5 @@
 
     <script src="https://kit.fontawesome.com/bdbed0aafa.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{{url_for('static', filename='js/codigo_aside_videos.js') }}"></script>
-    <script type="text/javascript" src="{{url_for('static', filename='js/codigo.js') }}"></script>
 </body>
 </html>

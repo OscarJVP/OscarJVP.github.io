@@ -8,7 +8,7 @@
     <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='styles/estilos.css') }}">
 </head>
 
-<body>
+<body onload = "pixeles()">
     <header>
 
         <!-- Logo -->
@@ -17,6 +17,7 @@
             <!-- Boton de registarse e iniciar sesión -->
             <a href="/registrarse">Registrarse</a>  <!-- cambiare referencia -->
             <a href="/iniciarS">Iniciar Sesión</a>  <!-- cambiare referencia -->
+	    <canvas id = "canvas1" width = "150" height = "150"></canvas>
         </div>
         
         <!-- Menu desplegable -->
@@ -270,5 +271,6 @@
 
     <script src="https://kit.fontawesome.com/bdbed0aafa.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{{url_for('static', filename='js/codigo_aside_videos.js') }}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/codigo_pixeles.js') }}"></script>
 </body>
 </html>
