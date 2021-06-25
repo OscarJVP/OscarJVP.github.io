@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pollo de Leche Rostizado</title>
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='styles/recetas.css') }}">
+</head>
+
+<body onload="animacion()">
+    <header>
+        <!-- Logo -->
+        <div class="logo">
+            <img src="{{ url_for('static',filename='images/logoSinFondo.png') }}" alt="logo">
+            <!-- Boton de registarse e iniciar sesión -->
+            <a href="/registrarse">Registrarse</a>  <!-- cambiare referencia -->
+            <a href="/iniciarS">Iniciar Sesión</a>  <!-- cambiare referencia -->
+        </div>
+        
+        <!-- Menu desplegable -->
+        <nav id="menu">
+            <ul>
+                <li>
+                    <a href="#">Temporadas<span class="arrow">&#x25BC;</span></a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#">Navidad<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/piernaA">Pierna ahumada de cerdo</a>  <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Fiestas Patrias<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/tacosC">Tacos de carnitas estilo Michoacán</a>  <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Año Nuevo<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/pechugaP">Pechuga de pavo en salsa ligera de naranja y arándanos</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Postres<span class="arrow">&#x25BC;</span></a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#">Sencillos<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/smoothieF">Smoothie de fresas y cerezas</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Pasteles<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/tartaH">Tarta helada de fresas</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Bajo en Azúcar<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/galletasA">Galletas de almendras</a>   <!-- Cambiar el enlace y revisar el nombre-->
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Sencillas<span class="arrow">&#x25BC;</span></a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#">Media hora<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/tostadaA">Tostada de bonito en aceite con mermelada de tomate y piñones</a>   <!-- Cambiar el enlace-->
+                                </li>
+
+                                <li>
+                                    <a href="/jacobosJ">San Jacobos de jamón y queso</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Sin horno<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/arrozL">Arroz con leche</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Niños<span class="arrow">&#x25BC;</span></a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#">Lunch<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/burritosP">Burritos de pechuga de pollo</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Divertidos<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/pizzaR">Pizza a la romana</a>   <!-- Cambiar el enlace-->
+                                </li>
+
+                                <li>
+                                    <a href="/berenjenasR">Berenjenas rellenas de carne</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Carnes<span class="arrow">&#x25BC;</span></a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#">Pollo<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/polloR">Pollo de leche rostizado</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Puerco y res<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/tostadaM">Tostada mallorquina</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Pescados y mariscos<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/galloE">Gallo empanado con salsa de limón</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="principal">
+        <!-- Contenido Principal -->
+        <main>	
+	        <h1>Pollo de Leche Rostizado</h1>
+	        <section class = "top">
+		        <section class = "infoReceta">
+			        <a>Categorías: Carnes, Pollo</a>
+			        <a>Dificultad: Media </a>
+			        <a>Tiempo: 80 min</a>
+			        <a>Porciones: 5</a>
+			        <a>Calificación: 3 estrellas</a>
+		        </section>
+		        <section class = "imagenReceta">	
+			        <img src="{{ url_for('static',filename='images/pollitoLecheRostizado.jpg') }}" alt="Pollo de Leche Rostizado" width = "400" height = "280">
+		        </section>
+    	    </section>
+
+	        <section class = "middle">
+		        <section class ="uno">
+			        <a class = "autor">Receta de Josselin Melara</a>
+		        </section>
+		    
+                	<section class = "dos">
+			        <canvas id = "canvas1" width = "100" height = "50"></canvas>
+			        <button id = "botonFav" onclick = "cambiarBoton()">Agregar a favoritos</button>
+    			</section>
+	        </section>
+
+	       <script src = "/js/codigo.js"></script>
+
+	        <section class = "ingredientes">
+		        <h3>Ingredientes</h3>
+		        <p>4 cucharadas de mantequilla</p>
+		        <p>2 cucharads de romero fresco picado</p>
+		        <p>2 dientes de ajo picados</p>
+		        <p>Sal y pimienta</p>
+		        <p>1 pechuga de pollo</p>
+		        <p>12 rebanadas delgadas de tocino ahumado</p>
+		        <p>10 zanahorias amarillas baby</p>
+		        <p>10 zanahorias anaranjadas baby</p>
+		        <p>1/2 taza de vino blanco</p>
+		        <p>1 taza de caldo de pollo</p>
+		        <p>2 tazas de jugo de mandarina</p>
+		        <p>1 cucharada de ralladura de mandarina</p>
+		        <p>La ralladura y jugo de limón</p>
+		        <p>Sal y pimienta negra</p>
+	        </section>
+	        <section class = "preparacion">
+	        	<h3>Preparación</h3>
+		        <p>Mezcla dos cucharadas de mantequilla con el romero y el ajo. Sal pimienta a tu gusto. Barniza con esta mezcla la pechuga de pavo y cubre con las tiras de tocino.</p>
+		        <p>Calienta una sartén y sella la pechuga hasta que el tocino esté dorado. Retirala y colócala en un refractario junto con las zanahorias.</p>
+		        <p>Vierte el vino sobre la sartén caliente, desglasa e incorpora el caldo de pollo, el jugo y la ralladura tanto de la mandarina como del limón; permite que hierva y sal pimienta.</p>
+		        <p>Vacía la preparación sobre la pechuga de pavo. Hornea a 220 oC por 30 minutos o hasta que el pavo esté perfectamente cocido.</p>
+		        <p>Retira del horno, recupera los líquidos de cocción y calentarlos a fuego medio hasta que reduzcan a la mitad. Añade la mantequilla restante, fundela y rectifica la sazón.</p>
+		        <p>Sirve la pechuga de pavo, bañala con la reducción de cítricos y acompáñala con las zanahorias.</p>
+	        </section>
+
+        </main>
+        
+        <!-- Aside -->
+        <aside class="videos">
+            <div id="video_1"></div>
+            <div id="video_2"></div>
+            <div id="video_3"></div>
+        </aside>
+    </div>
+    
+
+    <!-- Barra Lateral -->
+    <div class="barra-lateral">
+        <ul>
+            <li>
+                <a href="/">Inicio</a>  <!-- cambiar la referencia a donde va a ser dirijido-->
+            </li>
+
+            <li>
+                <a href="/">Mis Favoritas/Mis Datos</a>  <!-- cambiar la referencia a donde va a ser dirijido-->
+            </li>
+        </ul>
+    </div>
+    
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="contenedor">
+            <h2 class="titulo">Contáctanos</h2>
+        </div>
+
+        <div class="redes-sociales">
+            <a href="https://www.facebook.com/F%C3%A1cil-Es-103641258642178"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/_faciles/"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <div class="datos-personales">
+            <h2 class="titulo">Equipo 1</h2>
+            <li>Espinosa Ponce Beatriz Deite</li>
+            <li>Martínez Barrón Rebeca Paulina</li>
+            <li>Ruíz Zamora Edgar Sebastián</li>
+            <li>Vargas Flores Eduardo</li>
+            <li>Vargas Palacios Oscar Jair</li>
+        </div>
+    </footer>
+
+    
+
+
+    <script src="https://kit.fontawesome.com/bdbed0aafa.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/codigo_aside_videos.js') }}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/codigo.js') }}"></script>
+</body>
+</html>

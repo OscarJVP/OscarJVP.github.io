@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang = "es">
+
+<head>
+	<meta charset = "UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>FacilEs</title>
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='styles/styles.css') }}">
+</head>
+
+<body>
+    <header>HEADER</header>
+
+    <nav>NAV</nav>
+
+    <main>
+        <h1>Registro de Usuario</h1>
+
+        <form action = "/registrar", method = "POST">
+            Nombre: <input type="text" name="nombre" required> <br><br>
+            Apellido paterno: <input type="text" name="apellido_p" required> <br><br>
+            Apellido materno: <input type="text" name="apellido_m" required> <br><br>
+            Alias: <input type="text" name="alias" required> <br><br>
+            Contraseña: <input type="password" name="password" minlength="8"> <br><br>
+            Confirmar contraseña: <input type="password" name="password_conf" minlength="8"> <br><br>
+            <input type="submit" value="Registrarse">
+            <input type="reset" value="Limpiar Campos">
+        </form>
+        <a href="/">Página principal</a>
+    </main>
+
+	<aside>
+		<header>
+			<h1> Recetas Random </h1>
+		</header>
+        <div id="video_1"></div>
+        <div id="video_2"></div>
+        <div id="video_3"></div>
+	</aside>
+
+    <footer>FOOTER</footer>
+    <script type="text/javascript" src="{{url_for('static', filename='js/codigo_aside_videos.js') }}"></script>
+</body>
+
+</html>

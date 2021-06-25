@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tacos de Carnitas Estilo Michoacán</title>
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='styles/recetas.css') }}">
+</head>
+
+<body onload="animacion()">
+    <header>
+        <!-- Logo -->
+        <div class="logo">
+            <img src="{{ url_for('static',filename='images/logoSinFondo.png') }}" alt="logo">
+            <!-- Boton de registarse e iniciar sesión -->
+            <a href="/registrarse">Registrarse</a>  <!-- cambiare referencia -->
+            <a href="/iniciarS">Iniciar Sesión</a>  <!-- cambiare referencia -->
+        </div>
+        
+        <!-- Menu desplegable -->
+        <nav id="menu">
+            <ul>
+                <li>
+                    <a href="#">Temporadas<span class="arrow">&#x25BC;</span></a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#">Navidad<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/piernaA">Pierna ahumada de cerdo</a>  <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Fiestas Patrias<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/tacosC">Tacos de carnitas estilo Michoacán</a>  <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Año Nuevo<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/pechugaP">Pechuga de pavo en salsa ligera de naranja y arándanos</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Postres<span class="arrow">&#x25BC;</span></a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#">Sencillos<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/smoothieF">Smoothie de fresas y cerezas</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Pasteles<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/tartaH">Tarta helada de fresas</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Bajo en Azúcar<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/galletasA">Galletas de almendras</a>   <!-- Cambiar el enlace y revisar el nombre-->
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Sencillas<span class="arrow">&#x25BC;</span></a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#">Media hora<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/tostadaA">Tostada de bonito en aceite con mermelada de tomate y piñones</a>   <!-- Cambiar el enlace-->
+                                </li>
+
+                                <li>
+                                    <a href="/jacobosJ">San Jacobos de jamón y queso</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Sin horno<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/arrozL">Arroz con leche</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Niños<span class="arrow">&#x25BC;</span></a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#">Lunch<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/burritosP">Burritos de pechuga de pollo</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Divertidos<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/pizzaR">Pizza a la romana</a>   <!-- Cambiar el enlace-->
+                                </li>
+
+                                <li>
+                                    <a href="/berenjenasR">Berenjenas rellenas de carne</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Carnes<span class="arrow">&#x25BC;</span></a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#">Pollo<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/polloR">Pollo de leche rostizado</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Puerco y res<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/tostadaM">Tostada mallorquina</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Pescados y mariscos<span class="arrow">&#x25B6;</span></a>
+                            <ul class="submenu2">
+                                <li>
+                                    <a href="/galloE">Gallo empanado con salsa de limón</a>   <!-- Cambiar el enlace-->
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="principal">
+        <!-- Contenido Principal -->
+        <main>
+	        <audio id = "sonidoFiestas">
+		        <source src = "{{ url_for('static',filename='audios/fiestasPatrias.mp3') }}" type = "audio/mpeg">
+		        Your browser does not support the audio element.
+    	    </audio>
+	
+	        <h1>Tacos de Carnitas Estilo Michoacán</h1>
+	        <section class = "top">
+		        <section class = "infoReceta">
+			        <a>Categorías: Temporadas, Fiestas Patrias</a>
+			        <a>Dificultad: Alta</a>
+			        <a>Tiempo: 90 min</a>
+			        <a>Porciones: 15</a>
+			        <a>Calificación: 3.5 estrellas</a>
+		        </section>
+		        <section class = "imagenReceta">	
+			        <img src="{{ url_for('static',filename='images/tacosCarnitas.jpg') }}" alt="Tacos de Carnitas Estilo Michoacán" width = "400" height = "280">
+		        </section>
+    	    </section>
+
+	        <section class = "middle">
+		        <section class ="uno">
+			        <a class = "autor">Receta de Josselin Melara</a>
+		        </section>
+		    
+                <section class = "dos">
+			        <canvas id = "canvas1" width = "100" height = "50"></canvas>
+			        <button id = "botonFav" onclick = "cambiarBoton()">Agregar a favoritos</button>
+
+    			    <svg height="50" width="60">
+		    	    	<circle onclick = "fiestasPatrias()" cx="30" cy="25" r="20" stroke="#803945" fill="#803945"/>
+	    			    <polygon points = "25, 15 40, 25 25, 35" stroke = "#FF738A" fill = "#FF738A" onclick = "fiestasPatrias()"/>
+			        </svg>
+
+    		    </section>
+	        </section>
+
+	       <script src = "/js/codigo.js"></script>
+
+	        <section class = "ingredientes">
+		        <h3>Ingredientes</h3>
+		        <p>1 kg de lomo y pulpa de cerdo</p>
+		        <p>250 g de manteca de cerdo</p>
+		        <p>1 vaso de leche</p>
+		        <p>3 dientes de ajo</p>
+		        <p>6 tazas de agua</p>
+		        <p>300 g de chicharrón</p>
+		        <p>1/2 cebolla picada</p>
+			<p>1 manojo de cilantro picado</p>
+			<p>sal</p>
+			<p>salsa verde</p>
+	        </section>
+	        <section class = "preparacion">
+	        	<h3>Preparación</h3>
+		        <p>Corta la carne en cubos y colócala en una cacerola con la manteca, la leche, el ajo, la sal y el agua (necesaria para que cubra bien la carne). Tapa y cocina a fuego medio hasta que hierva. Reduce a fuego lento durante 45 minutos o hasta que el cerdo esté casi tierno.</p>
+		        <p>Destapa la cazuela y sube la flama para que se reduzca el líquido y la carne empiece a freírse en su propia grasa y la manteca. Remueve constantemente, para que se dore parejo y no se pegue, durante 15 minutos sin dejar que se reseque.</p>
+		        <p>Sirve en tortillas con cebolla y cilantro. Acompaña con chicharrón y salsa verde.</p>
+	        </section>
+
+        </main>
+        
+        <!-- Aside -->
+        <aside class="videos">
+            <div id="video_1"></div>
+            <div id="video_2"></div>
+            <div id="video_3"></div>
+        </aside>
+    </div>
+    
+
+    <!-- Barra Lateral -->
+    <div class="barra-lateral">
+        <ul>
+            <li>
+                <a href="/">Inicio</a>  <!-- cambiar la referencia a donde va a ser dirijido-->
+            </li>
+
+            <li>
+                <a href="/">Mis Favoritas/Mis Datos</a>  <!-- cambiar la referencia a donde va a ser dirijido-->
+            </li>
+        </ul>
+    </div>
+    
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="contenedor">
+            <h2 class="titulo">Contáctanos</h2>
+        </div>
+
+        <div class="redes-sociales">
+            <a href="https://www.facebook.com/F%C3%A1cil-Es-103641258642178"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/_faciles/"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <div class="datos-personales">
+            <h2 class="titulo">Equipo 1</h2>
+            <li>Espinosa Ponce Beatriz Deite</li>
+            <li>Martínez Barrón Rebeca Paulina</li>
+            <li>Ruíz Zamora Edgar Sebastián</li>
+            <li>Vargas Flores Eduardo</li>
+            <li>Vargas Palacios Oscar Jair</li>
+        </div>
+    </footer>
+
+    
+
+
+    <script src="https://kit.fontawesome.com/bdbed0aafa.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/codigo_aside_videos.js') }}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/codigo.js') }}"></script>
+</body>
+</html>

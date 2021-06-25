@@ -1,0 +1,42 @@
+body{
+    display: grid;
+    grid-template-columns:  60% 40%;
+    grid-template-rows: 80px 80px auto 100px;
+    grid-template-areas: "hd hd"
+                         "nv nv"
+                         "mn as"
+                         "ft ft";
+}
+header, nav, main, section, aside, footer{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: gray;
+    margin: 10px;
+    color:white;
+    text-align: left;
+}
+header{
+    grid-area: hd;
+}
+nav{
+    grid-area: nv;
+}
+main{
+    grid-area: mn;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+aside{
+    grid-area: as;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+footer{
+    grid-area: ft;
+}
+#s1{
+    grid-area: sc1;
+    background-color: lightgray;
+    color: black;
+}
