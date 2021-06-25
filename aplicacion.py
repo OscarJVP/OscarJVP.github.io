@@ -27,6 +27,10 @@ def favoritos():
 def agregar_favorito():
     return render_template("agregar_favorito.html");
 
+@app.route("/borrar_favorito")
+def borrar_favorito():
+    return render_template("borrar_favorito.html");
+
 @app.route("/registrar", methods = ["POST","GET"])
 def registrar():
     mensaje = "mensaje base"
@@ -128,6 +132,27 @@ def guardar_receta():
             print(f"Error message: {e}")
             conexion.rollback()
             mensaje = "No se agregó receta"
+            
+        finally:
+            return render_template("respuesta.html", mensaje = mensaje);
+            conexion.close()
+
+@app.route("/borrar_receta", methods = ["POST","GET"])
+def borrar_receta():
+    mensaje = "mensaje base"
+    if request.method == "POST":
+        try:
+            titulo = request.form["titulo"]
+            conexion = sqlite3.connect("data.db")
+            cursor = conexion.cursor()
+            cursor.execute("DELETE FROM recetas WHERE titulo=?", ([titulo]))
+            conexion.commit()
+            mensaje = "Receta eliminada"
+            
+        except Error as e:
+            print(f"Error message: {e}")
+            conexion.rollback()
+            mensaje = "No se borró receta"
             
         finally:
             return render_template("respuesta.html", mensaje = mensaje);

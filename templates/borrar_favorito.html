@@ -177,12 +177,12 @@
 
     <div class="principal">
         <!-- Contenido Principal -->
-        <main>                                                                 
-            <h2>Inicio de sesión</h2> <br>
-            <form action = "/usuario", method = "POST">
-                Alias: <input type="text" name="alias_ingreso" required> <br><br>
-                Contraseña: <input type="password" name="password_ingreso" minlength="8"> <br><br>
-                <input type="submit" value="Iniciar sesión">
+        <main>
+            <h2>Borrar Recetas de Favoritos</h2>
+
+            <form action = "/borrar_receta", method = "POST">
+                Título: <input type="text" name="titulo">
+                <input type="submit" value="Borrar de favoritos">
             </form>
         </main>
         <!-- Aside -->
